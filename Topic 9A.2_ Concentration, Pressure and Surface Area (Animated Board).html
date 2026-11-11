@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Topic 9A.2: Concentration, Pressure and Surface Area (Animated Board)</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚡</text></svg>">
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--text:#1d2433;--muted:#5b6478;--line:#dfe3ee;--hero:#c62828;--c:#E67E22;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141f;--card:#1a2032;--text:#e8ecf7;--muted:#a3adc4;--line:#2c3550;--hero:#b71c1c;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:16px}
+body.tm{font-size:21px}
+.wrap{max-width:900px;margin:auto;padding:14px 14px 90px}
+.hero{background:var(--hero);color:#fff;border-radius:18px;padding:18px 20px;border-left:70px solid #616161;position:relative}
+.hero b.n{position:absolute;left:-62px;top:16px;font-size:30px}
+.hero h1{margin:0;font-size:clamp(19px,4.8vw,28px);text-transform:uppercase}
+.hero p{margin:4px 0 0;color:#ffe082;font-size:14px}
+.hero .by{color:#fff;font-weight:bold;margin-top:8px;font-size:15px}
+.top{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-weight:bold;font-size:14px}
+.tmb{margin-left:auto;background:#c62828;color:#fff;border:0;border-radius:20px;padding:8px 14px;font-weight:bold;cursor:pointer;font-size:14px}
+.tm .tmb{background:#37474f}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{flex:1;min-width:140px;border:2px solid var(--c);background:var(--card);color:var(--text);border-radius:12px;padding:8px;font-weight:bold;cursor:pointer;font-size:13px}
+.tab.on{background:var(--c);color:#fff}
+.band{background:var(--c);color:#fff;border-radius:14px;padding:12px 16px;margin:14px 0 8px}
+.band h2{margin:0;font-size:1.3em}
+h3.s{margin:18px 0 6px;color:var(--c);font-size:1.05em;text-transform:uppercase}
+.lc,.q,.fg{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--c);border-radius:12px;padding:10px 14px;margin-bottom:10px}
+.lc h3{margin:0 0 4px;font-size:1.02em;color:var(--c)}
+.lc ul{margin:0;padding-left:20px}
+.lc li{margin:3px 0}
+.tm .pt:not(.vis){visibility:hidden}
+.fg svg,.fg canvas{width:100%;height:auto;max-height:300px;display:block}
+.fg canvas{background:var(--bg);border-radius:8px;border:1px solid var(--line)}
+.fg small{display:block;color:var(--muted);text-align:center;margin-top:4px}
+.an{stroke-dasharray:400;stroke-dashoffset:400;animation:dr linear forwards;fill:none;stroke-width:3}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.an{animation:none;stroke-dashoffset:0}}
+.sl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.sl input[type=range]{flex:1;min-width:150px}
+.mb{background:var(--c);color:#fff;border:0;border-radius:8px;padding:7px 12px;font-weight:bold;cursor:pointer}
+.mb.off{background:transparent;color:var(--c);border:2px solid var(--c)}
+.meter{display:flex;gap:10px;align-items:center;font-weight:bold}
+.meter i{flex:1;height:12px;background:var(--line);border-radius:8px;overflow:hidden}
+.meter u{display:block;height:100%;width:0;background:linear-gradient(90deg,#27ae60,#f1c40f,#e53935);text-decoration:none}
+.fls{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.fl{background:var(--c);color:#fff;border-radius:12px;padding:12px;cursor:pointer;min-height:92px}
+.fl span{display:none;margin-top:6px;background:rgba(255,255,255,.18);border-radius:8px;padding:6px 8px;font-size:.92em}
+.fl em{display:block;font-size:.8em;opacity:.85;margin-top:4px}
+.fl.open span{display:block}.fl.open em{display:none}
+.q p{margin:0 0 8px;font-weight:bold}
+.q p i{color:var(--c);font-style:normal}
+.opt{display:block;width:100%;text-align:left;margin:5px 0;padding:9px 12px;border:2px solid var(--line);background:var(--bg);color:var(--text);border-radius:10px;cursor:pointer;font-size:.95em}
+.opt.pick{border-color:var(--c)}
+.opt.ok{border-color:#27ae60;background:#e6f7ec;color:#14532d}
+.opt.no{border-color:#e74c3c;background:#fdeaea;color:#7f1d1d}
+.ex{display:none;margin-top:6px;padding:8px 12px;border-radius:8px;background:var(--bg);font-size:.92em}
+.ex.show{display:block}
+.rv{display:none;margin-top:4px;background:var(--c);color:#fff;border:0;border-radius:8px;padding:7px 12px;font-weight:bold;cursor:pointer}
+.tm .rv,.rv.always{display:inline-block}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#37474f;color:#fff;display:none;gap:8px;justify-content:center;align-items:center;padding:10px 10px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.tm .bar{display:flex}
+.bar button{background:#fff;color:#37474f;border:0;border-radius:10px;padding:10px 16px;font-weight:bold;cursor:pointer;font-size:15px}
+footer{color:var(--muted);font-size:12px;text-align:center;margin:20px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero"><b class="n">9A</b><h1>Effect of concentration, pressure and surface area on rate</h1><p>Topic 9A.2 · Learn, watch it happen, recall, self-check</p><div class="by">Designed by Teacher Aasia Khawar</div></div>
+<div class="top"><span class="pill" id="sc">Self-check: 0 / 9</span><button class="tmb" id="tmb">👩‍🏫 Teacher mode (online class)</button></div>
+<div class="tabs" id="tabs"></div>
+<div id="panel"></div>
+<footer>Designed by Teacher Aasia Khawar · Concepts follow Topic 9A.2. Practice questions and animations are original.</footer>
+</div>
+<div class="bar"><button onclick="go(-1)">◀ Back</button><span id="cnt">0 / 0</span><button onclick="go(1)">Next point ▶</button><button onclick="go(99)">Reveal all</button><button onclick="go(-99)">Reset</button></div>
+<script>
+const F=s=>s.replace(/~([^~]+)~/g,"<sub>$1</sub>").replace(/\^([^^]+)\^/g,"<sup>$1</sup>");
+const T=(x,y,t,o="")=>`<text x="${x}" y="${y}" font-size="11" fill="currentColor" ${o}>${t}</text>`;
+const G=(a,b,y)=>`<svg viewBox="0 0 320 200"><path d="M30 20V165H305" stroke="currentColor" stroke-width="1.5" fill="none"/>${T(8,14,y)}${T(285,182,"Time")}
+<path class="an" style="animation-duration:1.4s" d="M30 165C45 70 60 42 120 42H290" stroke="#e53935"/>
+<path class="an" style="animation-duration:3.8s" d="M30 165C90 95 135 50 210 42H290" stroke="#1e88e5"/>
+${T(66,78,a,"fill='#e53935' font-weight='bold'")}${T(150,100,b,"fill='#1e88e5' font-weight='bold'")}</svg>`;
+const CH=[
+{n:"1. Concentration",c:"#E67E22",sim:"conc",gr:["A: higher concentration","B: lower concentration","Volume of CO~2~ (excess acid)"],
+learn:[
+["Successful collisions",["A collision that results in a reaction is a successful collision.","The rate depends on how many successful collisions happen per second."]],
+["Concentration in solution",["More particles in the same volume of solution means they are closer together.","So collisions between reacting particles are more frequent.","More frequent collisions give more successful collisions per second, so the rate increases."]],
+["Reading the CO~2~ graph",["CaCO~3~ + excess HCl: the higher-concentration acid gives the steeper curve (A).","Curve A has the greater gradient all the way and levels off sooner.","Both curves end at the same volume: the CaCO~3~ is the same amount in each."]]],
+flip:[["Successful collision","A collision that results in a reaction."],["Why concentration matters","More particles per unit volume → more frequent collisions → more successful collisions per second."],["Steeper gradient","Faster rate. The curve levels off sooner because the reaction finishes sooner."],["What it does NOT change","Activation energy: the energy of each particle is the same; only the number of collisions per second changes."]],
+mcq:[["Increasing the concentration of an acid usually increases the rate because:",["each particle has more energy","the activation energy falls","collisions between particles become more frequent","the orientation of collisions improves"],2,"More particles per volume means more frequent collisions, so more successful collisions per second."],
+["On a gas-volume against time graph, curve P is steeper and levels off sooner than curve Q. This shows P has:",["a faster rate","a lower rate","a larger final volume","a higher activation energy"],0,"A steeper gradient means a higher rate, and the reaction finishes sooner."],
+["A ‘successful collision’ is one that:",["has the right orientation only","has energy above E~a~ only","results in a reaction","happens every second"],2,"Successful collisions are those that result in a reaction (enough energy and correct orientation)."]],
+oq:[["CaCO~3~ is the limiting reactant. The same mass reacts with excess HCl, first at 1.0 mol dm^−3^ and then at 2.0 mol dm^−3^. Describe how the gas-volume curve changes.","The 2.0 mol dm^−3^ curve starts steeper and levels off earlier, but it ends at the same final volume because the amount of CaCO~3~ is unchanged."],
+["Explain in terms of collisions why a more concentrated solution reacts faster.","There are more reacting particles in each unit volume, so they collide more often. Frequency of successful collisions rises, so the rate increases."]]},
+{n:"2. Pressure",c:"#2980B9",sim:"press",
+learn:[
+["Gas-phase reactions",["Raising the pressure of a gas mixture pushes more molecules into the same volume.","Collisions become more frequent, so the rate increases.","The idea is the same as raising concentration in solution."]],
+["Solids and liquids",["Changing the pressure has almost no effect on reactions of solids or liquids.","Their volume hardly changes under pressure, so the particles do not move closer."]],
+["Two special cases",["Inert gas added at constant volume: total pressure rises, but the reactants’ concentrations do not change, so the rate is unchanged.","Haber process: the reaction happens at active sites on an iron catalyst. At high pressure every site is already occupied, so more pressure no longer speeds it up."]]],
+flip:[["Higher pressure (gas)","More molecules per unit volume → more frequent collisions → faster rate."],["Pressure and liquids/solids","Almost no effect: volume barely changes, particles stay the same distance apart."],["Halving the volume","Same number of molecules in half the space: concentration doubles."],["Active sites","Places on a catalyst surface where reaction happens; if all are occupied, extra pressure does not help."]],
+mcq:[["For a reaction between gases, increasing the pressure at constant temperature will:",["decrease the rate","increase the rate","have no effect","lower the activation energy"],1,"More molecules in a given volume means more frequent collisions, so the rate rises."],
+["Why does pressure have almost no effect on a reaction between liquids?",["Liquids have no particles","Liquids are almost incompressible, so particles stay as close as before","Liquids have zero activation energy","Pressure only affects solids"],1,"The volume of a liquid hardly changes, so the particles do not get closer."],
+["In the Haber process, very high pressure no longer increases the rate because:",["nitrogen is a liquid","the catalyst melts","all the active sites on the catalyst are already occupied","the activation energy increases"],2,"Reaction happens at active sites; once all are full, more molecules cannot react faster."]],
+oq:[["H~2~(g) + I~2~(g) → 2HI(g). The container volume is halved at constant temperature. State and explain the effect on the rate.","The rate increases. The same number of molecules is in half the volume, so concentration doubles, collisions are more frequent and more successful collisions occur per second."],
+["Nitrogen, which does not take part, is added to a gaseous reaction mixture at constant volume and temperature. Predict the effect on the rate.","No change. Total pressure rises, but the concentrations of the reacting gases are unchanged, so collision frequency between reactants is unchanged."]]},
+{n:"3. Surface area",c:"#27AE60",sim:"surf",gr:["powder","lumps","Volume of gas (same mass of solid)"],
+learn:[
+["Heterogeneous reactions",["Reactants are in more than one phase, e.g. a solid and a gas, or a solid and a solution.","Reaction happens only at the surface of the solid."]],
+["Surface area",["Mg(s) + 2H^+^(aq) → Mg^2+^(aq) + H~2~(g): only H^+^ ions hitting the surface of the magnesium can react.","Powdered magnesium has a much larger surface area, so more collisions per second, and hydrogen is given off faster.","Same mass, bigger surface area: faster rate, but the same total amount of product."]],
+["Catalysts and equilibrium",["Solid catalysts work better when finely divided: powdered MnO~2~ decomposes H~2~O~2~ much faster than lumps.","Exam hint: a catalyst does not change the position of equilibrium. It only makes equilibrium be reached sooner."]]],
+flip:[["Heterogeneous reaction","Reactants are in more than one phase, e.g. a solid and a solution."],["Why powders react faster","More of the solid’s particles are exposed on the surface → more collisions per second."],["Powder against lumps, same mass","Faster rate but the same final amount of product."],["Catalyst and equilibrium","Does not change the position of equilibrium; only speeds up reaching it."]],
+mcq:[["Why does powdered magnesium react faster with dilute acid than magnesium ribbon of the same mass?",["Powder has lower activation energy","Powder has a larger surface area, so more collisions per second","Powder is heavier","Powder contains more atoms"],1,"A larger surface area exposes more atoms to collide with H^+^ ions."],
+["A heterogeneous reaction is one in which:",["the reactants are in more than one phase","a catalyst is always present","energy is released","the products are gases"],0,"Reactants in more than one phase, such as a solid and a solution."],
+["A catalyst is added to a system at equilibrium. The position of equilibrium:",["moves to the right","moves to the left","does not change","disappears"],2,"A catalyst only speeds up reaching equilibrium; it does not change the position."]],
+oq:[["Explain why powdered MnO~2~ is a better catalyst than lumps for decomposing H~2~O~2~.","Powder has a much larger surface area, so more catalyst surface is exposed for the H~2~O~2~ to collide with, and the reaction is faster."],
+["Zinc granules and zinc powder (same mass) react with excess dilute H~2~SO~4~. Describe the two hydrogen-volume against time curves.","The powder curve is steeper and levels off earlier (larger surface area, faster rate). Both end at the same volume, because the mass of zinc is the same."]]}];
+let cur=0,tm=false,step=0,pts=[];const res={};
+let S={n:10,v:100,mode:"lump"},P=[],raf=0,paused=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches,hits=[],kind="";
+function rp(b){b.previousElementSibling.querySelectorAll(".an").forEach((p,i)=>{p.getAnimations().forEach(a=>a.cancel());p.animate([{strokeDashoffset:400},{strokeDashoffset:0}],{duration:[1400,3800][i],easing:"linear",fill:"forwards"})})}
+function stopSim(){cancelAnimationFrame(raf);kind=""}
+function startSim(k){stopSim();kind=k;P=[];hits=[];S={n:10,v:100,mode:"lump"};loop()}
+function loop(){const cv=document.getElementById("cv");if(!cv||!kind)return;const x=cv.getContext("2d"),W=cv.width,H=cv.height,now=performance.now();
+ const bw=kind==="press"?W*S.v/100:W,n=kind==="conc"?S.n:kind==="press"?25:30,R=kind==="surf"?[]:null;
+ while(P.length<n)P.push({x:Math.random()*bw,y:Math.random()*H,vx:(Math.random()-.5)*5,vy:(Math.random()-.5)*5,f:0,cd:0});P.length=n;
+ let rects=[];if(kind==="surf"){if(S.mode==="lump")rects=[{x:W/2-60,y:H/2-60,w:120,h:120,f:0}];else for(let i=0;i<6;i++)for(let j=0;j<6;j++)rects.push({x:W/2-100+i*36,y:H/2-100+j*36,w:20,h:20,f:0})}
+ const rad=kind==="surf"?4:5;
+ if(!paused){P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<rad){p.x=rad;p.vx=Math.abs(p.vx)}if(p.x>bw-rad){p.x=bw-rad;p.vx=-Math.abs(p.vx)}if(p.y<rad){p.y=rad;p.vy=Math.abs(p.vy)}if(p.y>H-rad){p.y=H-rad;p.vy=-Math.abs(p.vy)}p.cd--;p.f--});
+  if(kind==="surf"){P.forEach(p=>rects.forEach(r=>{if(p.x>r.x-rad&&p.x<r.x+r.w+rad&&p.y>r.y-rad&&p.y<r.y+r.h+rad){const d=[p.x-(r.x-rad),r.x+r.w+rad-p.x,p.y-(r.y-rad),r.y+r.h+rad-p.y],m=Math.min(...d);if(m===d[0]){p.x=r.x-rad;p.vx=-Math.abs(p.vx)}else if(m===d[1]){p.x=r.x+r.w+rad;p.vx=Math.abs(p.vx)}else if(m===d[2]){p.y=r.y-rad;p.vy=-Math.abs(p.vy)}else{p.y=r.y+r.h+rad;p.vy=Math.abs(p.vy)}if(p.cd<=0){hits.push(now);p.cd=6;p.f=6;r.f=6}}}))}
+  else for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){const a=P[i],b=P[j];if(Math.hypot(a.x-b.x,a.y-b.y)<2*rad&&a.cd<=0&&b.cd<=0){hits.push(now);[a.vx,b.vx]=[b.vx,a.vx];[a.vy,b.vy]=[b.vy,a.vy];a.f=b.f=6;a.cd=b.cd=12}}}
+ hits=hits.filter(t=>now-t<1000);
+ const col=getComputedStyle(document.body).color;x.clearRect(0,0,W,H);x.strokeStyle=col;x.lineWidth=2;x.strokeRect(1,1,bw-2,H-2);
+ if(kind==="press"){x.fillStyle="#546e7a";x.fillRect(bw,0,12,H);x.fillStyle=col;x.font="12px Arial";x.fillText("piston",Math.min(bw+16,W-44),H/2)}
+ rects.forEach(r=>{x.fillStyle=r.f>0?"#ef6c00":"#78909c";x.fillRect(r.x,r.y,r.w,r.h)});
+ P.forEach(p=>{x.fillStyle=p.f>0?"#fdd835":kind==="surf"?"#1e88e5":"#e53935";x.beginPath();x.arc(p.x,p.y,rad,0,7);x.fill()});
+ const c=document.getElementById("cn");if(c){c.textContent=hits.length;document.getElementById("mt").style.width=Math.min(100,hits.length/(kind==="surf"?1.2:1.6))+"%"}
+ raf=requestAnimationFrame(loop)}
+function ctl(k){const m=`<div class="meter"><span>${k==="surf"?"Hits on the solid":"Collisions"} in the last second: <span id="cn">0</span></span><i><u id="mt"></u></i></div>`;
+ const p=`<button class="mb off" id="pz" onclick="paused=!paused;this.textContent=paused?'▶ Play':'⏸ Pause'">${paused?"▶ Play":"⏸ Pause"}</button>`;
+ if(k==="conc")return`<div class="sl"><label>Concentration:</label><input type="range" min="4" max="50" value="10" oninput="S.n=+this.value;sv.textContent=this.value+' particles'"><b id="sv">10 particles</b>${p}</div>${m}`;
+ if(k==="press")return`<div class="sl"><label>Piston: let the gas expand (low pressure) ← → squeeze it (high pressure)</label><input type="range" min="35" max="100" value="100" dir="rtl" oninput="S.v=+this.value;sv.textContent=Math.round(100/S.v*100)+'% pressure'"><b id="sv">100% pressure</b>${p}</div>${m}`;
+ return`<div class="sl"><button class="mb" id="b1" onclick="S.mode='lump';b1.className='mb';b2.className='mb off'">One lump</button><button class="mb off" id="b2" onclick="S.mode='powder';b2.className='mb';b1.className='mb off'">Powder (same mass)</button>${p}</div>${m}`}
+function render(){const ch=CH[cur];stopSim();document.documentElement.style.setProperty("--c",ch.c);
+ document.getElementById("tabs").innerHTML=CH.map((x,i)=>`<button class="tab ${i===cur?"on":""}" style="--c:${x.c}" onclick="sel(${i})">${F(x.n)}</button>`).join("");
+ let h=`<div class="band"><h2>${F(ch.n)}</h2></div><h3 class="s">① Learn it (teacher explains, you follow)</h3>`;
+ h+=ch.learn.map(l=>`<div class="lc"><h3>${F(l[0])}</h3><ul>${l[1].map(p=>`<li class="pt">${F(p)}</li>`).join("")}</ul></div>`).join("");
+ h+=`<h3 class="s">② Watch it happen (animation)</h3><div class="fg"><canvas id="cv" width="600" height="260"></canvas>${ctl(ch.sim)}<small>In this model every collision counts. In a real reaction only collisions with energy of at least E<sub>a</sub> and the right orientation are successful, so the rate follows the collision frequency.</small></div>`;
+ if(ch.gr)h+=`<div class="fg"><div class="gw">${G(ch.gr[0],ch.gr[1],F(ch.gr[2]))}</div><button class="rv always" onclick="rp(this)">▶ Replay the graph</button><small>The steeper curve is the faster reaction; it also levels off sooner.</small></div>`;
+ h+=`<h3 class="s">③ Must-learn: say it first, then tap</h3><div class="fls">${ch.flip.map(f=>`<div class="fl" onclick="this.classList.toggle('open')"><b>${F(f[0])}</b><span>${F(f[1])}</span><em>Tap to check</em></div>`).join("")}</div>`;
+ h+=`<h3 class="s">④ Self-check (work on your own)</h3>`+ch.mcq.map((q,j)=>`<div class="q" id="q${cur}_${j}"><p><i>Q${j+1}</i> ${F(q[0])}</p>${q[1].map((o,k)=>`<button class="opt" onclick="pick(${j},${k})">${F(o)}</button>`).join("")}<button class="rv" onclick="rev(${j})">Reveal answer</button><div class="ex">${F(q[3])}</div></div>`).join("");
+ h+=`<h3 class="s">⑤ Think and write, then check your answer</h3>`+ch.oq.map((q,j)=>`<div class="q"><p><i>W${j+1}</i> ${F(q[0])}</p><button class="rv always" onclick="this.nextElementSibling.classList.toggle('show')">Show model answer</button><div class="ex">${F(q[1])}</div></div>`).join("");
+ document.getElementById("panel").innerHTML=h;startSim(ch.sim);
+ ch.mcq.forEach((q,j)=>{if(res[cur+"_"+j]!==undefined)shown(j,res[cur+"_"+j]===1?q[2]:-1)});
+ pts=[...document.querySelectorAll("#panel .pt")];show(tm?0:pts.length)}
+function tally(){sc.textContent="Self-check: "+Object.values(res).filter(v=>v).length+" / 9"}
+function shown(j,sel){const q=CH[cur].mcq[j],el=document.getElementById("q"+cur+"_"+j);
+ el.querySelectorAll(".opt").forEach((b,k)=>{b.classList.remove("pick");if(k===q[2])b.classList.add("ok");else if(k===sel)b.classList.add("no")});el.querySelector(".ex").classList.add("show")}
+function pick(j,k){const q=CH[cur].mcq[j],key=cur+"_"+j;
+ if(tm){document.querySelectorAll("#q"+cur+"_"+j+" .opt").forEach((b,i)=>b.classList.toggle("pick",i===k));return}
+ if(res[key]!==undefined)return;res[key]=k===q[2]?1:0;shown(j,k);tally()}
+function rev(j){shown(j,-1)}
+function show(n){step=Math.max(0,Math.min(pts.length,n));pts.forEach((p,i)=>p.classList.toggle("vis",i<step));
+ cnt.textContent=step+" / "+pts.length;if(tm&&step>0)pts[step-1].scrollIntoView({block:"center",behavior:"smooth"})}
+function go(d){show(d===99?pts.length:d===-99?0:step+d)}
+function sel(i){cur=i;render();window.scrollTo(0,0)}
+tmb.onclick=()=>{tm=!tm;document.body.classList.toggle("tm",tm);tmb.textContent=tm?"✖ Exit teacher mode":"👩‍🏫 Teacher mode (online class)";render()};
+document.addEventListener("keydown",e=>{if(!tm)return;if(["ArrowRight","ArrowDown"," "].includes(e.key)){e.preventDefault();go(1)}if(["ArrowLeft","ArrowUp"].includes(e.key)){e.preventDefault();go(-1)}});
+render();tally();
+</script>
+</body>
+</html>
